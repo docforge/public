@@ -1,0 +1,13 @@
+{
+    "name": "docforge/handbook",
+    "version": "0.0.15",
+    "autoload": {
+        "psr-4": {
+            "DocForge\\DocForge\\": "src/"
+        }
+    },
+    "require": {
+        "erusev/parsedown": "^1.7",
+        "webmozart/glob": "^4.1"
+    }
+}
