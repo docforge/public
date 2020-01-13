@@ -1,12 +1,11 @@
 /*!
- * Font Awesome Free 5.10.1 by @fontawesome - https://fontawesome.com
+ * Font Awesome Free 5.6.1 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
 .fa,
 .fas,
 .far,
 .fal,
-.fad,
 .fab {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -186,7 +185,7 @@
           transform: scale(1, -1);
 }
 
-.fa-flip-both, .fa-flip-horizontal.fa-flip-vertical {
+.fa-flip-horizontal.fa-flip-vertical {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
   -webkit-transform: scale(-1, -1);
           transform: scale(-1, -1);
@@ -196,8 +195,7 @@
 :root .fa-rotate-180,
 :root .fa-rotate-270,
 :root .fa-flip-horizontal,
-:root .fa-flip-vertical,
-:root .fa-flip-both {
+:root .fa-flip-vertical {
   -webkit-filter: none;
           filter: none;
 }
@@ -283,10 +281,6 @@ readers do not read off random characters that represent icons */
 
 .fa-air-freshener:before {
   content: "\F5D0";
-}
-
-.fa-airbnb:before {
-  content: "\F834";
 }
 
 .fa-algolia:before {
@@ -565,20 +559,8 @@ readers do not read off random characters that represent icons */
   content: "\F04A";
 }
 
-.fa-bacon:before {
-  content: "\F7E5";
-}
-
 .fa-balance-scale:before {
   content: "\F24E";
-}
-
-.fa-balance-scale-left:before {
-  content: "\F515";
-}
-
-.fa-balance-scale-right:before {
-  content: "\F516";
 }
 
 .fa-ban:before {
@@ -633,10 +615,6 @@ readers do not read off random characters that represent icons */
   content: "\F241";
 }
 
-.fa-battle-net:before {
-  content: "\F835";
-}
-
 .fa-bed:before {
   content: "\F236";
 }
@@ -671,10 +649,6 @@ readers do not read off random characters that represent icons */
 
 .fa-bicycle:before {
   content: "\F206";
-}
-
-.fa-biking:before {
-  content: "\F84A";
 }
 
 .fa-bimobject:before {
@@ -773,10 +747,6 @@ readers do not read off random characters that represent icons */
   content: "\F6B7";
 }
 
-.fa-book-medical:before {
-  content: "\F7E6";
-}
-
 .fa-book-open:before {
   content: "\F518";
 }
@@ -787,22 +757,6 @@ readers do not read off random characters that represent icons */
 
 .fa-bookmark:before {
   content: "\F02E";
-}
-
-.fa-bootstrap:before {
-  content: "\F836";
-}
-
-.fa-border-all:before {
-  content: "\F84C";
-}
-
-.fa-border-none:before {
-  content: "\F850";
-}
-
-.fa-border-style:before {
-  content: "\F853";
 }
 
 .fa-bowling-ball:before {
@@ -829,10 +783,6 @@ readers do not read off random characters that represent icons */
   content: "\F5DC";
 }
 
-.fa-bread-slice:before {
-  content: "\F7EC";
-}
-
 .fa-briefcase:before {
   content: "\F0B1";
 }
@@ -855,10 +805,6 @@ readers do not read off random characters that represent icons */
 
 .fa-btc:before {
   content: "\F15A";
-}
-
-.fa-buffer:before {
-  content: "\F837";
 }
 
 .fa-bug:before {
@@ -1137,10 +1083,6 @@ readers do not read off random characters that represent icons */
   content: "\F14A";
 }
 
-.fa-cheese:before {
-  content: "\F7EF";
-}
-
 .fa-chess:before {
   content: "\F439";
 }
@@ -1213,10 +1155,6 @@ readers do not read off random characters that represent icons */
   content: "\F268";
 }
 
-.fa-chromecast:before {
-  content: "\F838";
-}
-
 .fa-church:before {
   content: "\F51D";
 }
@@ -1231,10 +1169,6 @@ readers do not read off random characters that represent icons */
 
 .fa-city:before {
   content: "\F64F";
-}
-
-.fa-clinic-medical:before {
-  content: "\F7F2";
 }
 
 .fa-clipboard:before {
@@ -1369,10 +1303,6 @@ readers do not read off random characters that represent icons */
   content: "\F4AD";
 }
 
-.fa-comment-medical:before {
-  content: "\F7F5";
-}
-
 .fa-comment-slash:before {
   content: "\F4B3";
 }
@@ -1431,10 +1361,6 @@ readers do not read off random characters that represent icons */
 
 .fa-copyright:before {
   content: "\F1F9";
-}
-
-.fa-cotton-bureau:before {
-  content: "\F89E";
 }
 
 .fa-couch:before {
@@ -1531,10 +1457,6 @@ readers do not read off random characters that represent icons */
 
 .fa-crown:before {
   content: "\F521";
-}
-
-.fa-crutch:before {
-  content: "\F7F7";
 }
 
 .fa-css3:before {
@@ -1825,10 +1747,6 @@ readers do not read off random characters that represent icons */
   content: "\F044";
 }
 
-.fa-egg:before {
-  content: "\F7FB";
-}
-
 .fa-eject:before {
   content: "\F052";
 }
@@ -1905,10 +1823,6 @@ readers do not read off random characters that represent icons */
   content: "\F153";
 }
 
-.fa-evernote:before {
-  content: "\F839";
-}
-
 .fa-exchange-alt:before {
   content: "\F362";
 }
@@ -1971,10 +1885,6 @@ readers do not read off random characters that represent icons */
 
 .fa-facebook-square:before {
   content: "\F082";
-}
-
-.fa-fan:before {
-  content: "\F863";
 }
 
 .fa-fantasy-flight-games:before {
@@ -2135,10 +2045,6 @@ readers do not read off random characters that represent icons */
 
 .fa-fire:before {
   content: "\F06D";
-}
-
-.fa-fire-alt:before {
-  content: "\F7E4";
 }
 
 .fa-fire-extinguisher:before {
@@ -2359,10 +2265,6 @@ readers do not read off random characters that represent icons */
 
 .fa-git:before {
   content: "\F1D3";
-}
-
-.fa-git-alt:before {
-  content: "\F841";
 }
 
 .fa-git-square:before {
@@ -2613,10 +2515,6 @@ readers do not read off random characters that represent icons */
   content: "\F5F7";
 }
 
-.fa-hamburger:before {
-  content: "\F805";
-}
-
 .fa-hammer:before {
   content: "\F6E3";
 }
@@ -2639,10 +2537,6 @@ readers do not read off random characters that represent icons */
 
 .fa-hand-lizard:before {
   content: "\F258";
-}
-
-.fa-hand-middle-finger:before {
-  content: "\F806";
 }
 
 .fa-hand-paper:before {
@@ -2699,10 +2593,6 @@ readers do not read off random characters that represent icons */
 
 .fa-hanukiah:before {
   content: "\F6E6";
-}
-
-.fa-hard-hat:before {
-  content: "\F807";
 }
 
 .fa-hashtag:before {
@@ -2821,10 +2711,6 @@ readers do not read off random characters that represent icons */
   content: "\F593";
 }
 
-.fa-hotdog:before {
-  content: "\F80F";
-}
-
 .fa-hotel:before {
   content: "\F594";
 }
@@ -2873,16 +2759,8 @@ readers do not read off random characters that represent icons */
   content: "\F246";
 }
 
-.fa-ice-cream:before {
-  content: "\F810";
-}
-
 .fa-icicles:before {
   content: "\F7AD";
-}
-
-.fa-icons:before {
-  content: "\F86D";
 }
 
 .fa-id-badge:before {
@@ -2959,10 +2837,6 @@ readers do not read off random characters that represent icons */
 
 .fa-italic:before {
   content: "\F033";
-}
-
-.fa-itch-io:before {
-  content: "\F83A";
 }
 
 .fa-itunes:before {
@@ -3091,10 +2965,6 @@ readers do not read off random characters that represent icons */
 
 .fa-laptop-code:before {
   content: "\F5FC";
-}
-
-.fa-laptop-medical:before {
-  content: "\F812";
 }
 
 .fa-laravel:before {
@@ -3569,6 +3439,10 @@ readers do not read off random characters that represent icons */
   content: "\F5A8";
 }
 
+.fa-nintendo-switch:before {
+  content: "\F418";
+}
+
 .fa-node:before {
   content: "\F419";
 }
@@ -3659,10 +3533,6 @@ readers do not read off random characters that represent icons */
 
 .fa-pagelines:before {
   content: "\F18C";
-}
-
-.fa-pager:before {
-  content: "\F815";
 }
 
 .fa-paint-brush:before {
@@ -3777,10 +3647,6 @@ readers do not read off random characters that represent icons */
   content: "\F4CE";
 }
 
-.fa-pepper-hot:before {
-  content: "\F816";
-}
-
 .fa-percent:before {
   content: "\F295";
 }
@@ -3813,10 +3679,6 @@ readers do not read off random characters that represent icons */
   content: "\F095";
 }
 
-.fa-phone-alt:before {
-  content: "\F879";
-}
-
 .fa-phone-slash:before {
   content: "\F3DD";
 }
@@ -3825,16 +3687,8 @@ readers do not read off random characters that represent icons */
   content: "\F098";
 }
 
-.fa-phone-square-alt:before {
-  content: "\F87B";
-}
-
 .fa-phone-volume:before {
   content: "\F2A0";
-}
-
-.fa-photo-video:before {
-  content: "\F87C";
 }
 
 .fa-php:before {
@@ -3875,10 +3729,6 @@ readers do not read off random characters that represent icons */
 
 .fa-pinterest-square:before {
   content: "\F0D3";
-}
-
-.fa-pizza-slice:before {
-  content: "\F818";
 }
 
 .fa-place-of-worship:before {
@@ -4133,10 +3983,6 @@ readers do not read off random characters that represent icons */
   content: "\F25D";
 }
 
-.fa-remove-format:before {
-  content: "\F87D";
-}
-
 .fa-renren:before {
   content: "\F18B";
 }
@@ -4255,10 +4101,6 @@ readers do not read off random characters that represent icons */
 
 .fa-safari:before {
   content: "\F267";
-}
-
-.fa-salesforce:before {
-  content: "\F83B";
 }
 
 .fa-sass:before {
@@ -4585,32 +4427,16 @@ readers do not read off random characters that represent icons */
   content: "\F15D";
 }
 
-.fa-sort-alpha-down-alt:before {
-  content: "\F881";
-}
-
 .fa-sort-alpha-up:before {
   content: "\F15E";
-}
-
-.fa-sort-alpha-up-alt:before {
-  content: "\F882";
 }
 
 .fa-sort-amount-down:before {
   content: "\F160";
 }
 
-.fa-sort-amount-down-alt:before {
-  content: "\F884";
-}
-
 .fa-sort-amount-up:before {
   content: "\F161";
-}
-
-.fa-sort-amount-up-alt:before {
-  content: "\F885";
 }
 
 .fa-sort-down:before {
@@ -4621,16 +4447,8 @@ readers do not read off random characters that represent icons */
   content: "\F162";
 }
 
-.fa-sort-numeric-down-alt:before {
-  content: "\F886";
-}
-
 .fa-sort-numeric-up:before {
   content: "\F163";
-}
-
-.fa-sort-numeric-up-alt:before {
-  content: "\F887";
 }
 
 .fa-sort-up:before {
@@ -4655,14 +4473,6 @@ readers do not read off random characters that represent icons */
 
 .fa-speakap:before {
   content: "\F3F3";
-}
-
-.fa-speaker-deck:before {
-  content: "\F83C";
-}
-
-.fa-spell-check:before {
-  content: "\F891";
 }
 
 .fa-spider:before {
@@ -4707,10 +4517,6 @@ readers do not read off random characters that represent icons */
 
 .fa-stack-overflow:before {
   content: "\F16C";
-}
-
-.fa-stackpath:before {
-  content: "\F842";
 }
 
 .fa-stamp:before {
@@ -4887,10 +4693,6 @@ readers do not read off random characters that represent icons */
 
 .fa-swimming-pool:before {
   content: "\F5C5";
-}
-
-.fa-symfony:before {
-  content: "\F83D";
 }
 
 .fa-synagogue:before {
@@ -5169,14 +4971,6 @@ readers do not read off random characters that represent icons */
   content: "\F2ED";
 }
 
-.fa-trash-restore:before {
-  content: "\F829";
-}
-
-.fa-trash-restore-alt:before {
-  content: "\F82A";
-}
-
 .fa-tree:before {
   content: "\F1BB";
 }
@@ -5385,10 +5179,6 @@ readers do not read off random characters that represent icons */
   content: "\F504";
 }
 
-.fa-user-nurse:before {
-  content: "\F82F";
-}
-
 .fa-user-plus:before {
   content: "\F234";
 }
@@ -5521,10 +5311,6 @@ readers do not read off random characters that represent icons */
   content: "\F40B";
 }
 
-.fa-voicemail:before {
-  content: "\F897";
-}
-
 .fa-volleyball-ball:before {
   content: "\F45F";
 }
@@ -5571,14 +5357,6 @@ readers do not read off random characters that represent icons */
 
 .fa-water:before {
   content: "\F773";
-}
-
-.fa-wave-square:before {
-  content: "\F83E";
-}
-
-.fa-waze:before {
-  content: "\F83F";
 }
 
 .fa-weebly:before {
@@ -5729,10 +5507,6 @@ readers do not read off random characters that represent icons */
   content: "\F19E";
 }
 
-.fa-yammer:before {
-  content: "\F840";
-}
-
 .fa-yandex:before {
   content: "\F413";
 }
@@ -5794,14 +5568,13 @@ readers do not read off random characters that represent icons */
 }
 
 /*!
- * Font Awesome Free 5.10.1 by @fontawesome - https://fontawesome.com
+ * Font Awesome Free 5.6.1 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
 @font-face {
   font-family: 'Font Awesome 5 Free';
   font-style: normal;
   font-weight: 900;
-  font-display: auto;
   src: url("../fonts/fontawesome/fa-solid-900.eot");
   src: url("../fonts/fontawesome/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../fonts/fontawesome/fa-solid-900.woff2") format("woff2"), url("../fonts/fontawesome/fa-solid-900.woff") format("woff"), url("../fonts/fontawesome/fa-solid-900.ttf") format("truetype"), url("../fonts/fontawesome/fa-solid-900.svg#fontawesome") format("svg");
 }
@@ -5813,14 +5586,13 @@ readers do not read off random characters that represent icons */
 }
 
 /*!
- * Font Awesome Free 5.10.1 by @fontawesome - https://fontawesome.com
+ * Font Awesome Free 5.6.1 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
 @font-face {
   font-family: 'Font Awesome 5 Brands';
   font-style: normal;
   font-weight: normal;
-  font-display: auto;
   src: url("../fonts/fontawesome/fa-brands-400.eot");
   src: url("../fonts/fontawesome/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../fonts/fontawesome/fa-brands-400.woff2") format("woff2"), url("../fonts/fontawesome/fa-brands-400.woff") format("woff"), url("../fonts/fontawesome/fa-brands-400.ttf") format("truetype"), url("../fonts/fontawesome/fa-brands-400.svg#fontawesome") format("svg");
 }
@@ -5829,7 +5601,7 @@ readers do not read off random characters that represent icons */
   font-family: 'Font Awesome 5 Brands';
 }
 
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
 /**
@@ -5850,13 +5622,6 @@ html {
  */
 body {
   margin: 0;
-}
-
-/**
- * Render the `main` element consistently in IE.
- */
-main {
-  display: block;
 }
 
 /**
@@ -5921,7 +5686,8 @@ abbr[title] {
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
-b, strong {
+b,
+strong {
   font-weight: bolder;
 }
 
@@ -5929,7 +5695,9 @@ b, strong {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
-code, kbd, samp {
+code,
+kbd,
+samp {
   font-family: monospace, monospace;
   /* 1 */
   font-size: 1em;
@@ -5947,7 +5715,8 @@ small {
  * Prevent `sub` and `sup` elements from affecting the line height in
  * all browsers.
  */
-sub, sup {
+sub,
+sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -5977,7 +5746,11 @@ img {
  * 1. Change the font styles in all browsers.
  * 2. Remove the margin in Firefox and Safari.
  */
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   font-family: inherit;
   /* 1 */
   font-size: 100%;
@@ -5992,7 +5765,8 @@ button, input, optgroup, select, textarea {
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
  */
-button, input {
+button,
+input {
   /* 1 */
   overflow: visible;
 }
@@ -6001,7 +5775,8 @@ button, input {
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
  * 1. Remove the inheritance of text transform in Firefox.
  */
-button, select {
+button,
+select {
   /* 1 */
   text-transform: none;
 }
@@ -6009,14 +5784,20 @@ button, select {
 /**
  * Correct the inability to style clickable types in iOS and Safari.
  */
-button, [type="button"], [type="reset"], [type="submit"] {
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 
 /**
  * Remove the inner border and padding in Firefox.
  */
-button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -6024,7 +5805,10 @@ button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-mo
 /**
  * Restore the focus styles unset by the previous rule.
  */
-button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring {
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -6075,7 +5859,8 @@ textarea {
  * 1. Add the correct box sizing in IE 10.
  * 2. Remove the padding in IE 10.
  */
-[type="checkbox"], [type="radio"] {
+[type="checkbox"],
+[type="radio"] {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   /* 1 */
@@ -6086,7 +5871,8 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -6101,13 +5887,13 @@ textarea {
   /* 2 */
 }
 
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
 /**
  * 1. Correct the inability to style clickable types in iOS and Safari.
  * 2. Change font properties to `inherit` in Safari.
@@ -6140,13 +5926,17 @@ summary {
 /**
  * Add the correct display in IE 10+.
  */
-template, [hidden] {
+template {
   display: none;
 }
 
 /**
  * Add the correct display in IE 10.
  */
+[hidden] {
+  display: none;
+}
+
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)

@@ -1,14 +1,10 @@
 {
   "name": "docforge/handbook",
-  "version": "0.0.15"
+  "version": "0.0.15",
   "type": "library",
   "license": "MIT",
-  "autoload": {
-      "psr-4": {
-          "DocForge\\DocForge\\": "src/"
-      }
-  },
-  "require": {
-      "docforge/docforge": "dev-master",
+  "require-dev": {
+    "docforge/docforge": "dev-master",
+    "docforge/framework": "dev-master"
   }
 }
