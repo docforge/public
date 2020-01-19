@@ -13,7 +13,7 @@
 
 $file = 'docforge.config.php';
 
-foreach ([__DIR__.'/../..', __DIR__] as $dir) {
+foreach ([__DIR__.'/../../../..', __DIR__] as $dir) {
     if (file_exists($dir . '/' . $file)) {
         $config = include $dir . '/' . $file;
         require_once empty($config['autoload']) ? $dir . '/vendor/autoload.php' : $config['autoload'];
@@ -21,4 +21,4 @@ foreach ([__DIR__.'/../..', __DIR__] as $dir) {
     }
 }
 
-(new \DocForge\Framework\Server($config, __DIR__))->run();
+echo (new \DocForge\Framework\Server($config, __DIR__ . '/..'))->run();

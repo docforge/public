@@ -1,6 +1,14 @@
 <?php
 /**
+ * DocForge Serve.
  *
+ * PHP version 7
+ *
+ * @category   Script
+ *
+ * @author     Francesco Bianco <bianco@javanile.org>
+ * @license    https://goo.gl/KPZ2qI  MIT License
+ * @copyright  2015-2020 Javanile
  */
 
 $scope = $this->getScope();
@@ -13,6 +21,6 @@ $scope = $this->getScope();
         <meta name="author" content="<?=$scope->getAuthor()?>">
         <meta name="description" content="">
         <title><?=$scope->getName()?> | <?=$scope->getCurrentPage()->getLabel()?></title>
-        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="<?=$scope->getStyleCss()?>">
     </head>
     <body>

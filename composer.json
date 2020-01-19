@@ -1,8 +1,20 @@
 {
   "name": "docforge/handbook",
   "version": "0.0.15",
-  "type": "library",
   "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Francesco Bianco",
+      "email": "bianco@javanile.org"
+    }
+  ],
+  "config": {
+    "process-timeout": 0
+  },
+  "scripts": {
+    "serve": "php -S localhost:8080 serve.php"
+  },
   "require-dev": {
     "docforge/docforge": "dev-master",
     "docforge/framework": "dev-master"
