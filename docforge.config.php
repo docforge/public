@@ -1,17 +1,21 @@
 <?php
+/**
+ * DocForge Config File.
+ *
+ * PHP version 7
+ *
+ * @category   Config
+ *
+ * @author     Francesco Bianco <bianco@javanile.org>
+ * @license    https://goo.gl/KPZ2qI  MIT License
+ * @copyright  2015-2020 Javanile
+ */
 
 return [
-    'namespace' => 'Javanile\\DocForge',
+    'path' => __DIR__,
+    'output' => 'docs',
     'pages' => [
-        'index' => 'Page',
-        'page1' => [
-            'index' => 'Page',
-            'page2' => 'Page',
-            'page3' => 'Page'
-        ],
-        'docs' => [
-            'classes' => 'src/**/*.php'
-        ],
+        'index' => 'README.md',
+        'license' => 'LICENSE',
     ],
-    'output' => 'docs'
 ];

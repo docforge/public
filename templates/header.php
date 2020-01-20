@@ -12,6 +12,7 @@
  */
 
 $scope = $this->getScope();
+
 ?>
 <!doctype html>
 <html lang="en">
