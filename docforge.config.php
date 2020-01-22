@@ -15,6 +15,6 @@ return [
     'path' => __DIR__,
     'output' => 'docs',
     'pages' => [
-        'index' => '*.md',
+        'index' => '*.json',
     ],
 ];
