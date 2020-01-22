@@ -5,7 +5,7 @@
   "scripts": {
     "watch": "cross-env NODE_ENV=development webpack --config node_modules/webpack-mix/setup/webpack.config.js --watch --progress --hide-modules",
     "build": "cross-env NODE_ENV=production webpack --config node_modules/webpack-mix/setup/webpack.config.js --progress --hide-modules",
-    "serve": "php -S localhost:8080 serve.php",
+    "serve": "php -S localhost:8080 -t public ../serve.php",
     "start": "run-p serve watch"
   },
   "devDependencies": {

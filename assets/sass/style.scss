@@ -3,81 +3,49 @@ $fa-font-path: '../fonts/fontawesome';
 @import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
 @import "node_modules/@fortawesome/fontawesome-free/scss/solid";
 @import "node_modules/@fortawesome/fontawesome-free/scss/brands";
-@import "node_modules/node-normalize-scss/normalize";
-@import "node_modules/prismjs/themes/prism";
+//@import "node_modules/node-normalize-scss/normalize";
+//@import "node_modules/prismjs/themes/prism";
 
 $nav-bg-color: #8892BF;
 $nav-link-color: #f2f2f2;
 $nav-link-active-color: #ffffff;
-@import "node_modules/mustard-ui/src/scss/mustard-ui.scss";
+$ini-ribbon-color: #2BA3D4;
+$ini-header-background-color: #252525;
+$ini-footer-background-color: #353535;
 
-body {
-  padding-top: 50px;
+@import "./uikit";
+@import "./highlight";
+@import "./dokui";
+
+.uk-icon-logo:before {
+  content: "\@{ini_icon_logo}";
 }
 
-a:focus, a:hover {
-  opacity: 1;
+.uk-icon-logo {
+  content: "@{ini_icon_logo}";
 }
 
-.row {
-  margin-top: 0;
+.tm-navbar .uk-navbar-nav > li.uk-active > a
+{
+  background-color: $ini-ribbon-color;
 }
 
-nav, .nav {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1030;
-  height: 50px;
-  border-bottom: 4px solid #4F5B93;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)
+.tm-section-color-1 {
+  background-color: $ini-ribbon-color;
 }
 
-.nav-logo {
-  text-shadow: 1px 1px #4F5B93;
+.tm-button-download {
+  color: $ini-ribbon-color !important;
 }
 
-.nav-links {
-  padding-top: 4px;
+.tm-navbar {
+  background-color: $ini-header-background-color;
 }
 
-.nav-links a {
-  font-weight: bold;
-  padding: 0 20px;
+.tm-footer {
+  background-color: $ini-footer-background-color;
 }
 
-.nav-links a:hover {
-  background: #4F5B93;
-}
-
-.nav-links a.active {
-  border-bottom: none;
-  background: #4F5B93;
-}
-
-.nav-search {
-  width: 400px;
-}
-
-.nav-search table {
-  margin: 0;
-  border-collapse: separate;
-}
-
-.nav-search table tbody td {
-  padding: 0;
-}
-
-.sidebar-category {
-  background: none;
-}
-
-.sidebar-category:focus, .sidebar-category:hover {
-  cursor: default;
-  opacity: 1;
-}
-
-.footer, footer {
-  border-top: 4px solid #626262;
+.tm-background {
+  background-color: $ini-footer-background-color;
 }

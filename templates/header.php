@@ -24,4 +24,4 @@ $scope = $this->getScope();
         <title><?=$scope->getName()?> | <?=$scope->getCurrentPage()->getLabel()?></title>
         <link rel="stylesheet" href="<?=$scope->getStyleCss()?>">
     </head>
-    <body>
+    <body class="tm-background">

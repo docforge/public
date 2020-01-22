@@ -15,7 +15,6 @@ return [
     'path' => __DIR__,
     'output' => 'docs',
     'pages' => [
-        'index' => 'README.md',
-        'license' => 'LICENSE',
+        'index' => '*.md',
     ],
 ];

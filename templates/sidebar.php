@@ -7,7 +7,7 @@ $scope = $this->getScope();
 $currentRootPage = $scope->getCurrentRootPage();
 ?>
 
-<div class="sidebar sidebar-left">
+<ul class="tm-nav uk-nav">
 
     <?php if (!$currentRootPage->hasSubPages()) { ?>
         <?php if ($scope->hasNonTerminalRootPages()) { ?>
@@ -65,4 +65,4 @@ $currentRootPage = $scope->getCurrentRootPage();
         <?php } ?>
     <?php } ?>
 
-</div>
+</ul>

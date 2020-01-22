@@ -6,18 +6,15 @@
 $scope = $this->getScope();
 ?>
 
-<nav>
-    <div class="nav-container">
-        <div class="nav-logo">
-            <a href="/">
-                <i class="fas fa-scroll"></i>
-                <?=$scope->getName()?>
-            </a>
-            <small>
-                This is the payoff
-            </small>
-        </div>
-        <ul class="nav-links">
+<nav class="tm-navbar uk-navbar uk-navbar-attached">
+    <div class="uk-container uk-container-center">
+
+        <a href="/" class="uk-navbar-brand dw-navbar-brand uk-hidden-small">
+            <i class="uk-icon-logo"></i>
+            <?=$scope->getName()?>
+        </a>
+
+        <ul id="dw-navbar-menu" class="uk-navbar-nav uk-hidden-small">
             <?php foreach ($scope->listRootPages() as $page) { ?>
                 <li>
                     <a <?=$page->isCurrent()||$page->isParentOfCurrent()?'class="active"':''?>
@@ -32,5 +29,14 @@ $scope = $this->getScope();
                 </div>
             </li>
         </ul>
+
+        <a href="#tm-offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas=""></a>
+
+        <div class="uk-navbar-brand uk-navbar-center uk-visible-small">
+            <a href="/" class="dw-navbar-brand"><i class="uk-icon-logo"></i> <?=$scope->getName()?>
+            </a>
+        </div>
+
     </div>
+
 </nav>
