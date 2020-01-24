@@ -1,6 +1,14 @@
 <?php
 /**
+ * DocForge Template File.
  *
+ * PHP version 7
+ *
+ * @category   Template
+ *
+ * @author     Francesco Bianco <bianco@javanile.org>
+ * @license    https://goo.gl/KPZ2qI  MIT License
+ * @copyright  2015-2020 Javanile
  */
 
 include __DIR__.'/header.php';

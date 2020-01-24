@@ -1,10 +1,10 @@
 <?php
 /**
- * DocForge Serve.
+ * DocForge Template File.
  *
  * PHP version 7
  *
- * @category   Script
+ * @category   Template
  *
  * @author     Francesco Bianco <bianco@javanile.org>
  * @license    https://goo.gl/KPZ2qI  MIT License

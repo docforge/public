@@ -1,6 +1,14 @@
 <?php
 /**
+ * DocForge Template File.
  *
+ * PHP version 7
+ *
+ * @category   Template
+ *
+ * @author     Francesco Bianco <bianco@javanile.org>
+ * @license    https://goo.gl/KPZ2qI  MIT License
+ * @copyright  2015-2020 Javanile
  */
 
 $scope = $this->getScope();
@@ -10,12 +18,14 @@ $scope = $this->getScope();
     <div class="uk-container uk-container-center uk-text-center">
 
         <ul class="uk-subnav uk-subnav-line">
-            <li><a></a></li>
+            <li><a href="a">a</a></li>
+            <li><a href="b">b</a></li>
         </ul>
 
         <div class="uk-panel">
-            Footer
-
+            <p>
+                Footer
+            </p>
             <a  href="/"
                 class="dw-brand"
             ><i class="uk-icon-logo"></i> <?=$scope->getName()?></a>
@@ -37,6 +47,8 @@ $scope = $this->getScope();
 </div>
 
 <div class="uk-tooltip"></div>
+
+<script type="text/javascript" src="js/index.js"></script>
 
 </body>
 </html>

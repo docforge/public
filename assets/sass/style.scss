@@ -3,8 +3,8 @@ $fa-font-path: '../fonts/fontawesome';
 @import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
 @import "node_modules/@fortawesome/fontawesome-free/scss/solid";
 @import "node_modules/@fortawesome/fontawesome-free/scss/brands";
-//@import "node_modules/node-normalize-scss/normalize";
-//@import "node_modules/prismjs/themes/prism";
+@import "node_modules/node-normalize-scss/normalize";
+@import "node_modules/prismjs/themes/prism";
 
 $nav-bg-color: #8892BF;
 $nav-link-color: #f2f2f2;
@@ -14,7 +14,6 @@ $ini-header-background-color: #252525;
 $ini-footer-background-color: #353535;
 
 @import "./uikit";
-@import "./highlight";
 @import "./dokui";
 
 .uk-icon-logo:before {
