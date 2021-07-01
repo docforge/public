@@ -11,14 +11,23 @@
  * @copyright  2015-2020 Javanile
  */
 
+require_once __DIR__.'/../vendor/autoload.php';
+
 use Javanile\Handbook\Server;
 
-$config = 'handbook.config.php';
+$configName = 'handbook.config.php';
 
-foreach ([__DIR__.'/../../../..', __DIR__.'/..'] as $dir) {
-    if (file_exists($dir . '/' . $config)) {
-        $config = include $dir . '/' . $config;
-        require_once empty($config['autoload']) ? $dir . '/vendor/autoload.php' : $config['autoload'];
+$configPaths = [
+    getcwd(),
+    __DIR__.'/../../../..',
+    __DIR__.'/..'
+];
+
+foreach ($configPaths as $path) {
+    if (file_exists($configFile = $path . '/' . $configName)) {
+        error_log('Config file: '.$configFile , 4);
+        $config = include $configFile;
+        require_once empty($config['autoload']) ? $path . '/vendor/autoload.php' : $config['autoload'];
         break;
     }
 }
