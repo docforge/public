@@ -1,6 +1,6 @@
 <?php
 /**
- * DocForge Serve.
+ * Handbook Serve.
  *
  * PHP version 7
  *

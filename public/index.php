@@ -11,14 +11,16 @@
  * @copyright  2015-2020 Javanile
  */
 
-$file = 'docforge.config.php';
+use Javanile\Handbook\Server;
+
+$config = 'handbook.config.php';
 
 foreach ([__DIR__.'/../../../..', __DIR__.'/..'] as $dir) {
-    if (file_exists($dir . '/' . $file)) {
-        $config = include $dir . '/' . $file;
+    if (file_exists($dir . '/' . $config)) {
+        $config = include $dir . '/' . $config;
         require_once empty($config['autoload']) ? $dir . '/vendor/autoload.php' : $config['autoload'];
         break;
     }
 }
 
-echo (new \DocForge\Framework\Server($config, __DIR__ . '/..'))->run();
+echo (new Server($config, __DIR__ . '/..'))->run();
