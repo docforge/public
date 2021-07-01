@@ -13,7 +13,7 @@
     "process-timeout": 0
   },
   "scripts": {
-    "serve": "php -S localhost:8080 -t public ../serve.php"
+    "serve": "php -S localhost:8888 -t public ../serve.php"
   },
   "require-dev": {
     "docforge/docforge": "dev-master",

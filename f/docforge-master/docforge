@@ -1,0 +1,37 @@
+#!/usr/bin/env php
+<?php
+/**
+ * DocForge command-line builder.
+ *
+ * PHP version 7
+ *
+ * @category   Script
+ *
+ * @author     Francesco Bianco <bianco@javanile.org>
+ * @license    https://goo.gl/KPZ2qI  MIT License
+ * @copyright  2015-2020 Javanile
+ */
+
+if (file_exists(__DIR__ . '/vendor/autoload.php')) {
+    require_once __DIR__ . '/vendor/autoload.php';
+} elseif (file_exists(__DIR__ . '/../autoload.php')) {
+    require_once __DIR__ . '/../autoload.php';
+} else {
+    require_once __DIR__ . '/../../autoload.php';
+}
+
+use Garden\Cli\Cli;
+use DocForge\Framework\Builder;
+
+$cli = new Cli();
+
+$cli->description('Dump some information from your database.')
+    ->opt('config:c', 'Config file.', true)
+    ->opt('theme:t', 'Theme directory.', true)
+    ->opt('output:o', 'Output directory.', false)
+
+$args = $cli->parse($argv, true);
+
+$builder = new Builder();
+
+$builder->run();
