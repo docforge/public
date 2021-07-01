@@ -17,12 +17,6 @@
     "build:docs": "php build_docs.php vendor/docforge/handbook",
     "serve": "php -S localhost:8080 -t vendor/docforge/handbook/public ../serve.php"
   },
-
-  "require": {
-    "erusev/parsedown": "^1.7",
-    "webmozart/glob": "^4.1",
-    "gajus/dindent": "2.0.*"
-  },
   "require-dev": {
     "phpunit/phpunit": "^6.5",
     "docforge/handbook": "dev-master"

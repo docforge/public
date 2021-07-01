@@ -1,5 +1,5 @@
 {
-  "name": "docforge/handbook",
+  "name": "javanile/handbook",
   "version": "0.0.15",
   "license": "MIT",
   "type": "library",
@@ -25,8 +25,12 @@
       "Javanile\\Handbook\\Tests\\": "tests/"
     }
   },
+  "require": {
+    "erusev/parsedown": "^1.7",
+    "webmozart/glob": "^4.1",
+    "gajus/dindent": "2.0.*"
+  },
   "require-dev": {
-    "docforge/docforge": "dev-master",
-    "docforge/framework": "dev-master"
+    "pestphp/pest": "^1.8"
   }
 }
