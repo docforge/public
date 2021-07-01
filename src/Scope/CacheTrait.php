@@ -11,10 +11,10 @@
  * @copyright  2015-2020 Javanile
  */
 
-namespace DocForge\Framework\Scope;
+namespace Javanile\Handbook\Scope;
 
-use DocForge\Framework\Functions;
-use DocForge\Framework\Page;
+use Javanile\Handbook\Functions;
+use Javanile\Handbook\Page;
 
 trait CacheTrait
 {

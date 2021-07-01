@@ -11,7 +11,7 @@
  * @copyright  2015-2020 Javanile
  */
 
-namespace DocForge\Framework\Scope;
+namespace Javanile\Handbook\Scope;
 
 trait TemplatesTrait
 {

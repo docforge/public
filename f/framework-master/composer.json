@@ -17,16 +17,7 @@
     "build:docs": "php build_docs.php vendor/docforge/handbook",
     "serve": "php -S localhost:8080 -t vendor/docforge/handbook/public ../serve.php"
   },
-  "autoload": {
-    "psr-4": {
-      "DocForge\\Framework\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "DocForge\\Framework\\Tests\\": "tests/"
-    }
-  },
+
   "require": {
     "erusev/parsedown": "^1.7",
     "webmozart/glob": "^4.1",

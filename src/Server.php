@@ -11,7 +11,7 @@
  * @copyright  2015-2020 Javanile
  */
 
-namespace DocForge\Framework;
+namespace Javanile\Handbook;
 
 class Server extends Scope
 {

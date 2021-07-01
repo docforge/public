@@ -11,7 +11,7 @@
  * @copyright  2015-2020 Javanile
  */
 
-namespace DocForge\Framework\Page;
+namespace Javanile\Handbook\Page;
 
 trait PrintTrait
 {

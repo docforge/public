@@ -11,12 +11,12 @@
  * @copyright  2015-2020 Javanile
  */
 
-namespace DocForge\Framework\Scope;
+namespace Javanile\Handbook\Scope;
 
-use DocForge\Framework\Exception\PagesConfigException;
-use DocForge\Framework\Functions;
-use DocForge\Framework\Page;
-use DocForge\Framework\Page404;
+use Javanile\Handbook\Exception\PagesConfigException;
+use Javanile\Handbook\Functions;
+use Javanile\Handbook\Page;
+use Javanile\Handbook\Page404;
 use Webmozart\Glob\Glob;
 use Webmozart\PathUtil\Path;
 

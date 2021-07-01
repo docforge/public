@@ -11,7 +11,7 @@
  * @copyright  2015-2020 Javanile
  */
 
-namespace DocForge\Framework\Exception;
+namespace Javanile\Handbook\Exception;
 
 class PagesConfigException extends \RuntimeException implements ExceptionInterface
 {
