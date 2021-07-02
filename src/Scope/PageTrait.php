@@ -46,9 +46,10 @@ trait PageTrait
             return $pages;
         }
 
+        $pagesKeys = array_keys($pages);
         $pagesReverse = array_reverse($pages);
         $firstValue = array_pop($pagesReverse);
-        $firstKey = array_keys($pages)[0];
+        $firstKey = isset($pagesKeys[0]) ? $pagesKeys[0] : 'Home';
         $slug = $slug.'/'.$firstKey;
 
         if (is_array($firstValue)) {
