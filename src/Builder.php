@@ -49,6 +49,8 @@ class Builder extends Scope
      */
     public function run()
     {
+        $this->initScope();
+
         $indenter = new Indenter(['indentation_character' => '  ']);
 
         // Build HTML files

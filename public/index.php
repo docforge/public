@@ -27,7 +27,7 @@ foreach ($configPaths as $path) {
     if (file_exists($configFile = $path . '/' . $configName)) {
         error_log('Config file: '.$configFile , 4);
         $config = include $configFile;
-        require_once empty($config['autoload']) ? $path . '/vendor/autoload.php' : $config['autoload'];
+        require_once empty($config['custom-autoload']) ? $path . '/vendor/autoload.php' : $config['custom-autoload'];
         break;
     }
 }

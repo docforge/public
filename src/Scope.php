@@ -50,6 +50,22 @@ abstract class Scope
     }
 
     /**
+     *
+     */
+    protected function initScope()
+    {
+        $source = isset($this->config['source']) ? $this->config['source'] : getcwd();
+        $namespace = isset($this->config['namespace']) ? $this->config['namespace'] : '';
+        if (isset($this->config['autoload']) && is_dir($this->config['autoload'])) {
+            spl_autoload_register(function ($class) use ($source, $namespace) {
+                if (substr($class, 0, strlen($namespace)) == $namespace) {
+                    require_once $source . '/' . strtr(substr($class, strlen($namespace)), '\\_', '//').'.php';
+                }
+            });
+        }
+    }
+
+    /**
      * @return mixed
      */
     public function getName()

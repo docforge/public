@@ -169,6 +169,8 @@ class Page
      */
     public function renderize()
     {
+        echo "STARTRENDER";
+        var_dump($this);
         ob_start();
 
         $layoutFile = $this->scope->getTemplateFile('index.php');

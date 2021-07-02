@@ -22,14 +22,18 @@ trait PageTrait
     /**
      *
      */
-    public function buildPage($item, $node, $slug = null)
+    public function buildPage($resource, $slug)
     {
-        $pageClass = $this->getClassName($item);
+        $pageClass = $this->getClassName($resource);
+        if ($this->isSourceFile($resource)) {
+            $pageClass = $this->getClassName(pathinfo($resource, PATHINFO_FILENAME));
+        }
+
         if (!class_exists($pageClass)) {
             $pageClass = Page::class;
         }
 
-        return new $pageClass($this, $node, $slug);
+        return new $pageClass($this, $slug, $slug);
     }
 
     /**

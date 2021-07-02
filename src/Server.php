@@ -20,7 +20,11 @@ class Server extends Scope
      */
     public function run()
     {
-        $this->setCurrentPage($this->getRoutePage());
+        $this->initScope();
+
+        $routedPage = $this->getRoutedPage();
+
+        $this->setCurrentPage($routedPage);
 
         return $this->getCurrentPage()->renderize();
     }
@@ -28,7 +32,7 @@ class Server extends Scope
     /**
      * @return string
      */
-    public function getRoutePage()
+    public function getRoutedPage()
     {
         $pages = $this->getPages();
         $slug = $this->getRouteSlug();

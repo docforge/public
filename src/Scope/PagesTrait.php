@@ -25,22 +25,17 @@ trait PagesTrait
     /**
      *
      */
-    public function buildPagesList($pages, $base = '')
+    public function buildPagesList($pages, $baseSlug = '')
     {
         $pagesList = [];
 
         if (is_array($pages) && $pages) {
-            foreach ($pages as $node => $item) {
-                $slug = $node;
-                if (is_array($item)) {
-                    $item = static::getFirstPageRecursive($item, $slug);
+            foreach ($pages as $slug => $resource) {
+                if (is_array($resource)) {
+                    $resource = static::getFirstPageRecursive($resource, $slug);
                 }
 
-                $pagesList[] = $this->buildPage(
-                    $item,
-                    $base ? $base.'/'.$node : $node,
-                    $base ? $base.'/'.$slug : $slug
-                );
+                $pagesList[] = $this->buildPage($resource, $baseSlug ? $baseSlug.'/'.$slug : $slug);
             }
         }
 
