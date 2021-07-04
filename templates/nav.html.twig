@@ -15,7 +15,7 @@
       {% for page in scope.listRootPages() %}
         <div class="nav-item">
           <a href="{{ page.getUrl() }}"
-             class="nav-link {{ (page.isCurrent() || page.isParentOfCurrent()) ? 'router-link-active' : '' }}">
+             class="nav-link {{ (page.isCurrent() or page.isParentOfCurrent()) ? 'router-link-active' : '' }}">
             {{ page.getMenuLabel() }}
           </a>
         </div>

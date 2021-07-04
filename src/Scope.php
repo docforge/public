@@ -40,7 +40,7 @@ abstract class Scope
     /**
      *
      */
-    protected $twig;
+    protected $templateEngine;
 
     /**
      * Constructor.
@@ -54,8 +54,8 @@ abstract class Scope
         $this->path = isset($config['path']) ? $config['path'] : getcwd();
 
         $loader = new \Twig\Loader\FilesystemLoader($this->templatesDir);
-        $this->twig = new \Twig\Environment($loader, [
-            'cache' => __DIR__.'/../cache',
+        $this->templateEngine = new \Twig\Environment($loader, [
+            'cache' => false,
         ]);
     }
 
@@ -166,6 +166,6 @@ abstract class Scope
      */
     public function getTemplateEngine()
     {
-        return $this->twig;
+        return $this->templateEngine;
     }
 }

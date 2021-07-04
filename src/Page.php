@@ -177,7 +177,9 @@ class Page
         return $html;
         */
         return $this->getScope()->getTemplateEngine()->render('index.html.twig', [
-            'scope' => $this->getScope()
+            'page' => $this,
+            'currentRootPage' => $this->getScope()->getCurrentRootPage(),
+            'scope' => $this->getScope(),
         ]);
     }
 
