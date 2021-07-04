@@ -38,6 +38,11 @@ abstract class Scope
     protected $templatesDir;
 
     /**
+     *
+     */
+    protected $twig;
+
+    /**
      * Constructor.
      *
      * @param $configFile
@@ -47,6 +52,11 @@ abstract class Scope
         $this->config = $config;
         $this->templatesDir = $theme . '/templates';
         $this->path = isset($config['path']) ? $config['path'] : getcwd();
+
+        $loader = new \Twig\Loader\FilesystemLoader($this->templatesDir);
+        $this->twig = new \Twig\Environment($loader, [
+            'cache' => __DIR__.'/../cache',
+        ]);
     }
 
     /**
