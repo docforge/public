@@ -1,25 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
-{{ include('header.html.twig') }}
-{{ include('nav.html.twig') }}
-{{ include('sidebar.html.twig') }}
-
-<main class="page">
-
-    <div class="theme-default-content content__default">
-        {{ page.content() }}
+  {{ include('head.html.twig') }}
+  <body>
+    <div id="app" data-server-rendered="true">
+      <div class="theme-container">
+        {{ include('nav.html.twig') }}
+        {{ include('sidebar.html.twig') }}
+        <main class="page">
+          <div class="theme-default-content content__default">
+            {{ page.content() }}
+          </div>
+          {{ include('footer.html.twig') }}
+        </main>
+      </div>
     </div>
-
-    {{ include('footer.html.twig') }}
-</main>
-</body>
+  </body>
 </html>
-
-
-
-
-
-
-
-
