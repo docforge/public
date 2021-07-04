@@ -1,25 +1,7 @@
-<?php
-/**
- * Handbook Template File.
- *
- * PHP version 7
- *
- * @category   Template
- *
- * @author     Francesco Bianco <bianco@javanile.org>
- * @license    https://goo.gl/KPZ2qI  MIT License
- * @copyright  2015-2020 Javanile
- */
-
-$scope = $this->getScope();
-
-?>
-<!DOCTYPE html>
-<html lang="en-US">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title><?=$scope->getName()?> | <?=$scope->getCurrentPage()->getLabel()?></title>
+    <title>{{ scope.getName() }} | {{ scope.getCurrentPage().getLabel() }}</title>
     <meta name="generator" content="VuePress 1.8.2">
     <meta name="author" content="<?=$scope->getAuthor()?>">
     <link rel="icon" href="/icon.png"><link rel='canonical' href='https://bricks.stefanobartoletti.it/theme/functions/'/>
@@ -40,7 +22,7 @@ $scope = $this->getScope();
     <meta name="twitter:image" content="https://bricks.stefanobartoletti.it/preview.png">
     <meta name="google-site-verification" content="snVUv6mUDur4MkL3CDDFGFDv7TPFm4vAk5BAfK-cDsw">
 
-    <link rel="stylesheet" href="<?=$scope->getStyleCss()?>">
+    <link rel="stylesheet" href="{{ scope.getStyleCss() }}">
 </head>
 <body>
 <div id="app" data-server-rendered="true">

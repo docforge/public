@@ -176,7 +176,9 @@ class Page
         $html = ob_get_clean();
         return $html;
         */
-        return $this->getScope()->getTemplateEngine()->render('index.html.twig', []);
+        return $this->getScope()->getTemplateEngine()->render('index.html.twig', [
+            'scope' => $this->getScope()
+        ]);
     }
 
     /**
