@@ -69,7 +69,9 @@ abstract class Scope
         if (isset($this->config['autoload']) && is_dir($this->config['autoload'])) {
             spl_autoload_register(function ($class) use ($source, $namespace) {
                 if (substr($class, 0, strlen($namespace)) == $namespace) {
-                    require_once $source . '/' . strtr(substr($class, strlen($namespace)), '\\_', '//').'.php';
+                    if (file_exists($file = $source . '/' . strtr(substr($class, strlen($namespace)), '\\_', '//').'.php')) {
+                        include_once $file;
+                    }
                 }
             });
         }
@@ -157,5 +159,13 @@ abstract class Scope
         $depth = $this->getCurrentPage()->getDepth();
 
         return str_repeat('../', $depth) . 'css/style.css';
+    }
+
+    /**
+     *
+     */
+    public function getTemplateEngine()
+    {
+        return $this->twig;
     }
 }

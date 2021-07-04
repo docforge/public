@@ -169,17 +169,14 @@ class Page
      */
     public function renderize()
     {
-        echo "STARTRENDER";
-        var_dump($this);
+        /*
         ob_start();
-
         $layoutFile = $this->scope->getTemplateFile('index.php');
-
         include $layoutFile;
-
         $html = ob_get_clean();
-
         return $html;
+        */
+        return $this->getScope()->getTemplateEngine()->render('index.html.twig', []);
     }
 
     /**
