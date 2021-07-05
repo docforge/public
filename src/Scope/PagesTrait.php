@@ -94,8 +94,14 @@ trait PagesTrait
     /**
      * Fill the array $pages with valid based on $key as slug $value of page source.
      */
-    public function fillPagesArray(&$pages, $key, $value)
+    public function fillPagesArray(&$pages, $keyLabelOrSlug, $value)
     {
+        $key = $keyLabelOrSlug;
+        if (Functions::isLabel($key)) {
+            $key = Functions::getLabelSlug($key);
+            $label = $keyLabelOrSlug;
+            $this->config['labels'][$key] = $label;
+        }
         if (is_array($value)) {
             foreach ($value as $subKey => $subValue) {
                 if (empty($pages[$key])) {

@@ -28,6 +28,13 @@ abstract class Scope
     protected $config;
 
     /**
+     * Configuration filename.
+     *
+     * @var string
+     */
+    protected $path;
+
+    /**
      * @var
      */
     protected $workingDir;

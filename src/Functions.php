@@ -13,11 +13,18 @@
 
 namespace Javanile\Handbook;
 
+use Cocur\Slugify\Slugify;
+
 class Functions
 {
     public static function isSlug($slug)
     {
-        return (boolean) preg_match('/^[a-z][a-z0-9-]+$/i', $slug);
+        return (boolean) preg_match('/^[a-z][a-z0-9-]+$/', $slug);
+    }
+
+    public static function isLabel($label)
+    {
+        return (boolean) preg_match('/^[a-z].*$/i', $label);
     }
 
     public static function isGlob($glob)
@@ -40,5 +47,14 @@ class Functions
     public static function getFileSlug($file)
     {
         return strtr(pathinfo($file, PATHINFO_BASENAME), '.', '-');
+    }
+
+    /**
+     * @param $file
+     * @return string
+     */
+    public static function getLabelSlug($label)
+    {
+        return Slugify::create()->slugify($label);
     }
 }

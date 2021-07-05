@@ -29,7 +29,8 @@
     "erusev/parsedown": "^1.7",
     "webmozart/glob": "^4.1",
     "gajus/dindent": "2.0.*",
-    "twig/twig": "^3.0"
+    "twig/twig": "^3.0",
+    "cocur/slugify": "^4.0"
   },
   "require-dev": {
     "pestphp/pest": "^1.8"
