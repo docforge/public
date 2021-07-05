@@ -114,6 +114,18 @@ abstract class Scope
     }
 
     /**
+     * @param $file
+     *
+     * @return string
+     */
+    public function getClassNameBySourceFile($file)
+    {
+        $className = substr($file, strlen($this->config['source']), -4);
+
+        return $this->getClassName(trim(strtr($className, '/', '\\'), '\\'));
+    }
+
+    /**
      * @param $class
      * @return string
      */
@@ -123,12 +135,17 @@ abstract class Scope
     }
 
     /**
-     * @param $class
+     * Check if file is the source directory.
+     *
+     * @param $file
+     *
      * @return string
      */
     public function isSourceFile($file)
     {
-        return file_exists($this->getSourceFile($file));
+        $sourceFile = $this->getSourceFile($file);
+
+        return pathinfo($sourceFile, PATHINFO_EXTENSION) == 'php' &&  file_exists($sourceFile);
     }
 
     /**
@@ -146,6 +163,12 @@ abstract class Scope
      */
     public function getSourceFile($file)
     {
+        $realpath = realpath($file);
+        if ($realpath && $file == $realpath) {
+            // check if file is already a absolute path
+            return $file;
+        }
+
         return $this->getSourceDir() . '/' . $file;
     }
 

@@ -35,6 +35,15 @@ class Server extends Scope
     public function getRoutedPage()
     {
         $pages = $this->getPages();
+        if (isset($_GET['debug_pages']) && $_GET['debug_pages']) {
+            echo '<pre>';
+            foreach ($this->listAllPages() as $page) {
+                var_dump($page->getInfo());
+            }
+            echo '</pre>';
+            die();
+        }
+
         $slug = $this->getRouteSlug();
         $tokens = $this->getTokensBySlug($slug);
         $depth = count($tokens) - 1;

@@ -85,7 +85,6 @@ trait PagesTrait
             echo '<pre>';
             var_dump($pages);
             echo '</pre>';
-            exit;
         }
 
         return $this->setCache(__METHOD__, $pages);

@@ -20,20 +20,24 @@ use Javanile\Handbook\Page404;
 trait PageTrait
 {
     /**
-     *
+     * @param $resource
+     * @param $slug
+     * @return mixed
      */
     public function buildPage($resource, $slug)
     {
         $pageClass = $this->getClassName($resource);
         if ($this->isSourceFile($resource)) {
-            $pageClass = $this->getClassName(pathinfo($resource, PATHINFO_FILENAME));
+            $pageClass = $this->getClassNameBySourceFile($resource);
         }
+
+        var_dump($pageClass);
 
         if (!class_exists($pageClass)) {
             $pageClass = Page::class;
         }
 
-        return new $pageClass($this, $slug, $slug);
+        return new $pageClass($this, $slug);
     }
 
     /**

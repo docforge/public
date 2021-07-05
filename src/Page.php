@@ -206,4 +206,15 @@ class Page
     {
         return isset($this->menuLabel) ? $this->menuLabel : $this->getLabel();
     }
+
+    /**
+     *
+     */
+    public function getInfo(
+    ) {
+        return [
+            'class' => get_class($this),
+            'slug' => $this->slug,
+        ];
+    }
 }
