@@ -52,7 +52,8 @@ abstract class Scope
     /**
      * Constructor.
      *
-     * @param $configFile
+     * @param $config
+     * @param $theme
      */
     public function __construct($config, $theme)
     {
@@ -89,7 +90,7 @@ abstract class Scope
      */
     public function getName()
     {
-        return isset($this->config['name']) ? $this->config['name'] : 'docforge';
+        return isset($this->config['name']) ? $this->config['name'] : 'Handbook';
     }
 
     /**
@@ -97,7 +98,7 @@ abstract class Scope
      */
     public function getAuthor()
     {
-        return isset($this->config['author']) ? $this->config['author'] : 'someone';
+        return isset($this->config['author']) ? $this->config['author'] : 'Someone';
     }
 
     /**

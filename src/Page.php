@@ -28,6 +28,13 @@ class Page
      *
      * @var string
      */
+    protected $resource;
+
+    /**
+     * Unique node page identifier.
+     *
+     * @var string
+     */
     protected $slug;
 
     /**
@@ -50,9 +57,10 @@ class Page
      * @param $scope
      * @param $slug
      */
-    public function __construct($scope, $slug)
+    public function __construct($scope, $resource, $slug)
     {
         $this->scope = $scope;
+        $this->resource = $resource;
         $this->slug = $slug;
         $this->name = $this->slug != 'index' ? ucwords(basename($this->slug)) : 'Home';
         $this->depth = substr_count($slug, '/');
@@ -214,6 +222,7 @@ class Page
     ) {
         return [
             'class' => get_class($this),
+            'resource' => $this->resource,
             'slug' => $this->slug,
         ];
     }

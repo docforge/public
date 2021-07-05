@@ -30,7 +30,8 @@
     "webmozart/glob": "^4.1",
     "gajus/dindent": "2.0.*",
     "twig/twig": "^3.0",
-    "cocur/slugify": "^4.0"
+    "cocur/slugify": "^4.0",
+    "symfony/yaml": "^5.3"
   },
   "require-dev": {
     "pestphp/pest": "^1.8"

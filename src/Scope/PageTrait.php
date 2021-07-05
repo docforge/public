@@ -16,6 +16,8 @@ namespace Javanile\Handbook\Scope;
 use Javanile\Handbook\Functions;
 use Javanile\Handbook\Page;
 use Javanile\Handbook\Page404;
+use Javanile\Handbook\YamlPage;
+use Symfony\Component\Yaml\Yaml;
 
 trait PageTrait
 {
@@ -29,15 +31,15 @@ trait PageTrait
         $pageClass = $this->getClassName($resource);
         if ($this->isSourceFile($resource)) {
             $pageClass = $this->getClassNameBySourceFile($resource);
+        } elseif ($this->isYamlFile($resource)) {
+            $pageClass = $this->getYamlPageClass($resource);
         }
-
-        var_dump($pageClass);
 
         if (!class_exists($pageClass)) {
             $pageClass = Page::class;
         }
 
-        return new $pageClass($this, $slug);
+        return new $pageClass($this, $resource, $slug);
     }
 
     /**
@@ -128,5 +130,39 @@ trait PageTrait
         }
 
         return new Page404($this, '404');
+    }
+
+    /**
+     * @param $yamlFile
+     *
+     * @return bool
+     */
+    public function isYamlFile($yamlFile)
+    {
+        $yamlFile = $this->config['source'].'/'.$yamlFile;
+        $fileExtension = strtolower(pathinfo($yamlFile, PATHINFO_EXTENSION));
+
+        return in_array($fileExtension, ['yaml', 'yml']) && file_exists($yamlFile);
+    }
+
+    /**
+     * @param $yamlFile
+     *
+     * @return bool
+     */
+    public function getYamlFile($yamlFile)
+    {
+        $yamlFile = $this->config['source'].'/'.$yamlFile;
+
+        return $yamlFile;
+    }
+    /**
+     *
+     */
+    public function getYamlPageClass($yamlFile)
+    {
+        $yaml = Yaml::parseFile($yamlFile);
+
+        return isset($yaml['class']) && class_exists($yaml['class']) ? $yaml['class'] : YamlPage::class;
     }
 }

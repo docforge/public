@@ -119,6 +119,8 @@ trait PagesTrait
             return $pages = array_merge($pages, [$key => $this->getPagesByGlob($value)]);
         } elseif (Functions::isSlug($key) && $this->isSourceFile($value)) {
             return $pages = array_merge($pages, [$key => $this->getClassName($value)]);
+        } elseif (Functions::isSlug($key) && $this->isYamlFile($value)) {
+            return $pages = array_merge($pages, [$key => $this->getYamlFile($value)]);
         } elseif (Functions::isSlug($key) && $this->isClassName($value)) {
             return $pages = array_merge($pages, [$key => $this->getClassName($value)]);
         }
