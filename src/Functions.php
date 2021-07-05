@@ -46,7 +46,9 @@ class Functions
      */
     public static function getFileSlug($file)
     {
-        return strtr(pathinfo($file, PATHINFO_BASENAME), '.', '-');
+        $filename = pathinfo($file, PATHINFO_FILENAME);
+
+        return Slugify::create()->slugify($filename);
     }
 
     /**

@@ -93,6 +93,10 @@ trait PagesTrait
 
     /**
      * Fill the array $pages with valid based on $key as slug $value of page source.
+     * @param $pages
+     * @param $keyLabelOrSlug
+     * @param $value
+     * @return array
      */
     public function fillPagesArray(&$pages, $keyLabelOrSlug, $value)
     {

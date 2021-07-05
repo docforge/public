@@ -28,14 +28,14 @@ class Page
      *
      * @var string
      */
-    protected $node;
+    protected $slug;
 
     /**
      * Unique slug page identifier.
      *
      * @var string
      */
-    protected $slug;
+    protected $name;
 
     /**
      * Depth of page in directory strucure (0 for root file, +1 for each sub-directory).
@@ -46,18 +46,16 @@ class Page
 
     /**
      * Constructor.
+     *
+     * @param $scope
+     * @param $slug
      */
-    public function __construct($scope, $node, $slug = null)
+    public function __construct($scope, $slug)
     {
-        if ($slug === null) {
-            $slug = $node;
-        }
-
         $this->scope = $scope;
-        $this->node = $node;
         $this->slug = $slug;
+        $this->name = $this->slug != 'index' ? ucwords(basename($this->slug)) : 'Home';
         $this->depth = substr_count($slug, '/');
-        $this->name = $this->node != 'index' ? ucwords(basename($this->node)) : 'Home';
     }
 
     /**
@@ -66,14 +64,6 @@ class Page
     public function getScope()
     {
         return $this->scope;
-    }
-
-    /**
-     * @return string
-     */
-    public function getNode()
-    {
-        return $this->node;
     }
 
     /**
@@ -111,47 +101,47 @@ class Page
     /**
      *
      */
-    public function hasSubpages()
+    public function hasSubPages()
     {
-        return $this->scope->hasSubpages($this);
+        return $this->scope->hasSubPages($this);
     }
 
     /**
      *
      */
-    public function listSubpages()
+    public function listSubPages()
     {
-        return $this->scope->listSubpages($this);
+        return $this->scope->listSubPages($this);
     }
 
     /**
      *
      */
-    public function hasTerminalSubpages()
+    public function hasTerminalSubPages()
     {
-        return $this->scope->hasTerminalSubpages($this);
+        return $this->scope->hasTerminalSubPages($this);
     }
 
     /**
      *
      */
-    public function listTerminalSubpages()
+    public function listTerminalSubPages()
     {
-        return $this->scope->listTerminalSubpages($this);
+        return $this->scope->listTerminalSubPages($this);
     }
 
     /**
      *
      */
-    public function hasNonterminalSubpages()
+    public function hasNonterminalSubPages()
     {
-        return $this->scope->hasNonterminalSubpages($this);
+        return $this->scope->hasNonterminalSubPages($this);
     }
 
     /**
      *
      */
-    public function listNonterminalSubpages()
+    public function listNonterminalSubPages()
     {
         return $this->scope->listNonterminalSubpages($this);
     }
