@@ -96,8 +96,7 @@ trait PageTrait
      */
     public function isCurrentPage($page)
     {
-        return $this->currentPage->getSlug() == $page->getSlug()
-            || $this->currentPage->getNode() == $page->getNode();
+        return $this->currentPage->getSlug() == $page->getSlug();
     }
 
     /**
@@ -108,11 +107,11 @@ trait PageTrait
      */
     public function isParentOfCurrentPage($page)
     {
-        $node = $page->getNode().'/';
-        $currentNode = $this->currentPage->getNode();
-        $currentNodeCut = substr($currentNode, 0, strlen($node));
+        $slug = $page->getSlug().'/';
+        $currentSlug = $this->currentPage->getSlug();
+        $currentSlugCut = substr($currentSlug, 0, strlen($slug));
 
-        return $node == $currentNodeCut;
+        return $slug == $currentSlugCut;
     }
 
     /**
@@ -130,39 +129,5 @@ trait PageTrait
         }
 
         return new Page404($this, '404');
-    }
-
-    /**
-     * @param $yamlFile
-     *
-     * @return bool
-     */
-    public function isYamlFile($yamlFile)
-    {
-        $yamlFile = $this->config['source'].'/'.$yamlFile;
-        $fileExtension = strtolower(pathinfo($yamlFile, PATHINFO_EXTENSION));
-
-        return in_array($fileExtension, ['yaml', 'yml']) && file_exists($yamlFile);
-    }
-
-    /**
-     * @param $yamlFile
-     *
-     * @return bool
-     */
-    public function getYamlFile($yamlFile)
-    {
-        $yamlFile = $this->config['source'].'/'.$yamlFile;
-
-        return $yamlFile;
-    }
-    /**
-     *
-     */
-    public function getYamlPageClass($yamlFile)
-    {
-        $yaml = Yaml::parseFile($yamlFile);
-
-        return isset($yaml['class']) && class_exists($yaml['class']) ? $yaml['class'] : YamlPage::class;
     }
 }

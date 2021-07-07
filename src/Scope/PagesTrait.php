@@ -115,6 +115,8 @@ trait PagesTrait
             return $pages;
         } elseif (is_int($key) && Functions::isGlob($value)) {
             return $pages = array_merge($pages, $this->getPagesByGlob($value));
+        } elseif (is_int($key) && $this->isMarkdownFile($value)) {
+            return $pages = array_merge($pages, $this->getPagesByGlob($value));
         } elseif (Functions::isSlug($key) && Functions::isGlob($value)) {
             return $pages = array_merge($pages, [$key => $this->getPagesByGlob($value)]);
         } elseif (Functions::isSlug($key) && $this->isSourceFile($value)) {
@@ -261,7 +263,7 @@ trait PagesTrait
      */
     public function hasSubPages($page)
     {
-        $node = $page->getNode();
+        $node = $page->getSlug();
         if ($this->hasCache(__METHOD__, $node)) {
             return $this->getCache(__METHOD__, $node);
         }
@@ -275,7 +277,7 @@ trait PagesTrait
      */
     public function listSubPages($page)
     {
-        $node = $page->getNode();
+        $node = $page->getSlug();
         if ($this->hasCache(__METHOD__, $node)) {
             return $this->getCache(__METHOD__, $node);
         }
@@ -294,7 +296,7 @@ trait PagesTrait
      */
     public function hasTerminalSubPages($page)
     {
-        $node = $page->getNode();
+        $node = $page->getSlug();
         if ($this->hasCache(__METHOD__, $node)) {
             return $this->getCache(__METHOD__, $node);
         }
@@ -317,7 +319,7 @@ trait PagesTrait
      */
     public function listTerminalSubPages($page)
     {
-        $node = $page->getNode();
+        $node = $page->getSlug();
         if ($this->hasCache(__METHOD__, $node)) {
             return $this->getCache(__METHOD__, $node);
         }
@@ -341,7 +343,7 @@ trait PagesTrait
      */
     public function hasNonTerminalSubPages($page)
     {
-        $node = $page->getNode();
+        $node = $page->getSlug();
         if ($this->hasCache(__METHOD__, $node)) {
             return $this->getCache(__METHOD__, $node);
         }
@@ -364,7 +366,7 @@ trait PagesTrait
      */
     public function listNonTerminalSubpages($page)
     {
-        $node = $page->getNode();
+        $node = $page->getSlug();
         if ($this->hasCache(__METHOD__, $node)) {
             return $this->getCache(__METHOD__, $node);
         }

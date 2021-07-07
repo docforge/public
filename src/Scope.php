@@ -13,6 +13,8 @@
 
 namespace Javanile\Handbook;
 
+use Symfony\Component\Yaml\Yaml;
+
 abstract class Scope
 {
     use Scope\CacheTrait;
@@ -198,5 +200,53 @@ abstract class Scope
     public function getTemplateEngine()
     {
         return $this->templateEngine;
+    }
+
+    /**
+     * @param $yamlFile
+     *
+     * @return bool
+     */
+    public function isYamlFile($yamlFile)
+    {
+        $yamlFile = $this->config['source'].'/'.$yamlFile;
+        $fileExtension = strtolower(pathinfo($yamlFile, PATHINFO_EXTENSION));
+
+        return in_array($fileExtension, ['yaml', 'yml']) && file_exists($yamlFile);
+    }
+
+    /**
+     * @param $yamlFile
+     *
+     * @return bool
+     */
+    public function getYamlFile($yamlFile)
+    {
+        $yamlFile = $this->config['source'].'/'.$yamlFile;
+
+        return $yamlFile;
+    }
+
+    /**
+     *
+     */
+    public function getYamlPageClass($yamlFile)
+    {
+        $yaml = Yaml::parseFile($yamlFile);
+
+        return isset($yaml['class']) && class_exists($yaml['class']) ? $yaml['class'] : YamlPage::class;
+    }
+
+    /**
+     * @param $markdownFile
+     *
+     * @return bool
+     */
+    public function isMarkdownFile($markdownFile)
+    {
+        $markdownFile = $this->config['source'].'/'.$markdownFile;
+        $fileExtension = strtolower(pathinfo($markdownFile, PATHINFO_EXTENSION));
+
+        return in_array($fileExtension, ['md', 'markdown']) && file_exists($markdownFile);
     }
 }
