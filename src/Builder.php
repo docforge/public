@@ -38,6 +38,16 @@ class Builder extends Scope
     {
         $this->initScope();
 
+        // Copy Assests
+        echo "Copy assets\n";
+        foreach ($this->assets as $assetDir => $extensions) {
+            static::assetCopy(
+                $this->getPublicDir().'/'.$assetDir,
+                $this->getBuildDir().'/'.$assetDir,
+                $extensions
+            );
+        }
+
         $indenter = new Indenter(['indentation_character' => '  ']);
 
         // Build HTML files
@@ -58,15 +68,7 @@ class Builder extends Scope
             echo "\n";
         }
 
-        // Copy Assests
-        echo "Copy assets\n";
-        foreach ($this->assets as $assetDir => $extensions) {
-            static::assetCopy(
-                $this->publicDir.'/'.$assetDir,
-                $this->buildDir.'/'.$assetDir,
-                $extensions
-            );
-        }
+
     }
 
     /**
@@ -91,11 +93,25 @@ class Builder extends Scope
     }
 
     /**
+     * @param string $file
+     * @return string
+     */
+    public function getPublicDir($file = '')
+    {
+        return __DIR__.'/../public'.'/'.$file;
+    }
+
+    /**
      * @param $src
      * @param $dst
      */
     public static function assetCopy($source, $target, $extensions)
     {
+        if (!is_dir($source)) {
+            return;
+        }
+
+        echo "Opening $source\n";
         $dir = opendir($source);
 
         if (!is_dir($target)) {
@@ -109,6 +125,7 @@ class Builder extends Scope
                     self::assetCopy($source .'/'. $file, $target .'/'. $file, $extensions);
                 } else {
                     copy($source .'/'. $file, $target .'/'. $file);
+                    chmod($source .'/'. $file, 0777);
                 }
             }
         }
