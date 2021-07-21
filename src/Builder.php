@@ -32,19 +32,6 @@ class Builder extends Scope
     ];
 
     /**
-     * Constructor.
-     *
-     * @param $configFile
-     */
-    public function __construct($config, $theme)
-    {
-        $this->config = $config;
-        $this->publicDir = $theme . '/public';
-        $this->templatesDir = $theme . '/templates';
-        $this->buildDir = isset($this->config['output']) ? $this->config['output'] : 'build';
-    }
-
-    /**
      *
      */
     public function run()
@@ -57,16 +44,22 @@ class Builder extends Scope
         foreach ($this->listAllPages() as $page) {
             $this->setCurrentPage($page);
             $pageFile = $this->getBuildPath($page->getFileName());
+            echo "Writing $pageFile ";
             if (!is_dir(dirname($pageFile))) {
                 mkdir(dirname($pageFile), 0777, true);
             }
-            $html = $page->renderize();
+            echo ".";
+            $html = $page->render();
+            echo ".";
             $html = $indenter->indent($html);
-
-            file_put_contents($pageFile, $html);
+            echo ".";
+            $ok = file_put_contents($pageFile, $html);
+            chmod($pageFile, 0777);
+            echo "\n";
         }
 
         // Copy Assests
+        echo "Copy assets\n";
         foreach ($this->assets as $assetDir => $extensions) {
             static::assetCopy(
                 $this->publicDir.'/'.$assetDir,
@@ -77,6 +70,16 @@ class Builder extends Scope
     }
 
     /**
+     * @return string
+     */
+    public function getBuildDir()
+    {
+        $this->buildDir = isset($this->config['output']) ? $this->config['output'] : 'build';
+
+        return $this->buildDir;
+    }
+
+    /**
      * @param string $file
      * @return string
      */
@@ -84,7 +87,7 @@ class Builder extends Scope
     {
         $cwd = getcwd();
 
-        return $cwd.'/'.$this->buildDir.'/'.$file;
+        return $cwd.'/'.$this->getBuildDir().'/'.$file;
     }
 
     /**
@@ -96,6 +99,7 @@ class Builder extends Scope
         $dir = opendir($source);
 
         if (!is_dir($target)) {
+            echo "Create $target\n";
             mkdir($target, 0777, true);
         }
 

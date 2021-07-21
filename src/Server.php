@@ -26,7 +26,7 @@ class Server extends Scope
 
         $this->setCurrentPage($routedPage);
 
-        return $this->getCurrentPage()->renderize();
+        return $this->getCurrentPage()->render();
     }
 
     /**

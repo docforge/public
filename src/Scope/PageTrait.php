@@ -128,6 +128,6 @@ trait PageTrait
             }
         }
 
-        return new Page404($this, '404');
+        return new Page404($this, '404', '404');
     }
 }

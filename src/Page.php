@@ -165,16 +165,11 @@ class Page
     /**
      *
      */
-    public function renderize()
+    public function render()
     {
-        /*
-        ob_start();
-        $layoutFile = $this->scope->getTemplateFile('index.php');
-        include $layoutFile;
-        $html = ob_get_clean();
-        return $html;
-        */
-        return $this->getScope()->getTemplateEngine()->render('index.html.twig', [
+        $templateEngine = $this->getScope()->getTemplateEngine();
+
+        return $templateEngine->render('index.html.twig', [
             'page' => $this,
             'currentRootPage' => $this->getScope()->getCurrentRootPage(),
             'scope' => $this->getScope(),

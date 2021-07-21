@@ -16,12 +16,14 @@ if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require_once __DIR__ . '/vendor/autoload.php';
 } elseif (file_exists(__DIR__ . '/../autoload.php')) {
     require_once __DIR__ . '/../autoload.php';
+} elseif (file_exists(__DIR__ . '/../vendor/autoload.php')) {
+    require_once __DIR__ . '/../vendor/autoload.php';
 } else {
     require_once __DIR__ . '/../../autoload.php';
 }
 
 use Garden\Cli\Cli;
-use DocForge\Framework\Builder;
+use Javanile\Handbook\Builder;
 
 /*
 $cli = new Cli();
@@ -33,6 +35,24 @@ $cli->description('Dump some information from your database.')
 
 $args = $cli->parse($argv, true);
 */
-$builder = new Builder();
+
+$configName = 'handbook.config.php';
+
+$configPaths = [
+    getcwd(),
+    __DIR__.'/../../../..',
+    __DIR__.'/..'
+];
+
+foreach ($configPaths as $path) {
+    if (file_exists($configFile = $path . '/' . $configName)) {
+        error_log('Config file: '.$configFile , 4);
+        $config = include $configFile;
+        require_once empty($config['custom-autoload']) ? $path . '/vendor/autoload.php' : $config['custom-autoload'];
+        break;
+    }
+}
+
+$builder = new Builder($config, __DIR__ . '/..');
 
 $builder->run();
