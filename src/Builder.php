@@ -125,7 +125,7 @@ class Builder extends Scope
                     self::assetCopy($source .'/'. $file, $target .'/'. $file, $extensions);
                 } else {
                     copy($source .'/'. $file, $target .'/'. $file);
-                    chmod($source .'/'. $file, 0777);
+                    chmod($target .'/'. $file, 0777);
                 }
             }
         }
